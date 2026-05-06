@@ -6,9 +6,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
 
     // Sequence timing
-    const textWaitTime = 2000;
-    const nameWaitTime = 1500;
+    const textWaitTime = 3000;
+    const nameWaitTime = 3200;
     const expandTime = 1000;
+
+    // Scroll Animation Observer Setup
+    const setupScrollObserver = () => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: stop observing once animated to keep it visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    };
 
     // 1. Initial State: "Welcome To My Portfolio" is showing.
     
@@ -19,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             introText.classList.add('hidden');
             
-            // 3. Show "Elham"
+            // 3. Show "Elham" -> "Siva K"
             introName.classList.remove('hidden');
             
             setTimeout(() => {
-                // 4. Fade out "Elham"
+                // 4. Fade out Name
                 introName.classList.add('fade-out');
                 
                 setTimeout(() => {
@@ -37,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         // 6. Fade out intro overlay and show main content
                         introOverlay.classList.add('fade-out');
                         mainContent.classList.remove('hidden');
+                        
+                        // Start scroll observer now that main content is visible
+                        setupScrollObserver();
                         
                         setTimeout(() => {
                             // 7. Clean up overlay

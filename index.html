@@ -13,8 +13,8 @@
     <!-- Intro Animation Overlay -->
     <div id="intro-overlay">
         <div class="intro-content">
-            <h1 id="intro-text" class="glow-text">Welcome To My Portfolio<span class="cursor">|</span></h1>
-            <h1 id="intro-name" class="glow-text hidden">Siva K</h1>
+            <h1 id="intro-text" class="premium-reveal">Welcome To My Portfolio</h1>
+            <h1 id="intro-name" class="premium-glow hidden">Siva K</h1>
             <div id="intro-circle" class="hidden"></div>
         </div>
     </div>
@@ -23,7 +23,7 @@
     <div id="main-content" class="hidden">
         
         <!-- Header -->
-        <header>
+        <header class="animate-on-scroll">
             <div class="logo glow-text">Siva K</div>
             <nav>
                 <ul>
@@ -38,7 +38,7 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll">
                 <div class="pill">
                     <span class="pill-icon">👨‍💻</span> "Hello, it's me"
                 </div>
@@ -59,7 +59,7 @@
                     <a href="#portfolio" class="btn secondary" style="text-decoration: none; display: inline-block;">Explore My Projects</a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image animate-on-scroll delay-1">
                 <div class="image-container main-avatar-container">
                     <img src="assets/avatar_main.png" alt="Siva K Avatar">
                 </div>
@@ -68,9 +68,9 @@
 
         <!-- About Section -->
         <section id="about" class="about-section-container">
-            <div class="about glass-card-large">
+            <div class="about glass-card-large animate-on-scroll">
                 <div class="about-top">
-                    <div class="about-content">
+                    <div class="about-content animate-on-scroll delay-1">
                         <h2>About <span class="glow-text">Me</span></h2>
                         <div class="underline-about"></div>
                         <h3 style="margin-bottom: 1rem; color: var(--text-main);">Full Stack Developer & BSc Computer Science Student</h3>
@@ -78,25 +78,25 @@
                         <p>My major project <strong>"Triowise"</strong> is a fully functional multi-vendor e-commerce marketplace built with Flask, SQLAlchemy, and modern web technologies. The platform features user authentication, product management, shopping cart, wishlist, order processing, admin dashboard, and advanced features like voice search and dark mode.</p>
                         
                         <div class="stats">
-                            <div class="stat-card highlighted-stat">
+                            <div class="stat-card highlighted-stat hover-lift">
                                 <h3>Education</h3>
                                 <p class="sub-text">BSc Computer Science (2023-2026)<br>S.T. Hindu College, Nagercoil</p>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card hover-lift">
                                 <h3>Certifications</h3>
                                 <p class="sub-text">Diploma in Full Stack Java Development<br>Zoho Creator Specialist</p>
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                         <div class="image-container white-bg">
+                    <div class="about-image animate-on-scroll delay-2">
+                         <div class="image-container white-bg hover-glow">
                             <img src="assets/avatar_about.png" alt="Siva K Casual Avatar">
                         </div>
                     </div>
                 </div>
 
                 <!-- Skills Marquee -->
-                <div class="skills-marquee">
+                <div class="skills-marquee animate-on-scroll delay-3">
                     <div class="marquee-content">
                         <i class='bx bxl-html5' style='color:#e34c26'></i>
                         <i class='bx bxl-css3' style='color:#264de4'></i>
@@ -127,20 +127,20 @@
 
         <!-- Services Section -->
         <section id="service" class="service-section section-column">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">My <span class="glow-text">Services</span></h2>
+            <h2 class="animate-on-scroll" style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">My <span class="glow-text">Services</span></h2>
             <div class="service-container">
-                <div class="glass-card">
-                    <i class='bx bx-code-alt icon-large glow-text'></i>
+                <div class="glass-card animate-on-scroll delay-1 hover-lift">
+                    <i class='bx bx-code-alt icon-large glow-text icon-bounce'></i>
                     <h3>Web Development</h3>
                     <p>Full-stack web applications using Flask, Python, SQLAlchemy, HTML5, CSS3, and JavaScript. Building responsive, scalable, and secure websites with modern UI/UX principles.</p>
                 </div>
-                <div class="glass-card">
-                    <i class='bx bxl-java icon-large glow-text'></i>
+                <div class="glass-card animate-on-scroll delay-2 hover-lift">
+                    <i class='bx bxl-java icon-large glow-text icon-bounce'></i>
                     <h3>Java Development</h3>
                     <p>Certified Full Stack Java Developer with expertise in core Java, Spring Boot, and enterprise application development. Creating robust backend systems and desktop applications.</p>
                 </div>
-                <div class="glass-card">
-                    <i class='bx bx-data icon-large glow-text'></i>
+                <div class="glass-card animate-on-scroll delay-3 hover-lift">
+                    <i class='bx bx-data icon-large glow-text icon-bounce'></i>
                     <h3>Zoho Creator</h3>
                     <p>Specialized in low-code application development using Zoho Creator. Building custom business applications, automated workflows, and integrated solutions for small to medium businesses.</p>
                 </div>
@@ -149,12 +149,12 @@
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio-section section-column">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">Project</h2>
-            <div style="width: 50px; height: 3px; background: var(--cyan-glow); margin: 0 auto 3rem auto; box-shadow: 0 0 10px var(--cyan-glow);"></div>
+            <h2 class="animate-on-scroll" style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">Project</h2>
+            <div class="animate-on-scroll delay-1" style="width: 50px; height: 3px; background: var(--cyan-glow); margin: 0 auto 3rem auto; box-shadow: 0 0 10px var(--cyan-glow);"></div>
             
             <div class="project-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-1 hover-lift">
                     <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/0/600/400" alt="Triowise E-Commerce">
                     </div>
@@ -172,7 +172,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-2 hover-lift">
                      <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/1/600/400" alt="Java Banking App">
                     </div>
@@ -190,7 +190,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-3 hover-lift">
                      <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/2/600/400" alt="Zoho CRM">
                     </div>
@@ -208,7 +208,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-1 hover-lift">
                      <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/3/600/400" alt="Portfolio Website">
                     </div>
@@ -226,7 +226,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-2 hover-lift">
                      <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/4/600/400" alt="College Complaint">
                     </div>
@@ -244,7 +244,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll delay-3 hover-lift">
                      <div class="project-img-wrapper">
                          <img src="https://picsum.photos/id/5/600/400" alt="Task Manager">
                     </div>
@@ -265,11 +265,11 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section section-column">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">Contact Me</h2>
-            <div style="width: 50px; height: 3px; background: var(--cyan-glow); margin: 0 auto 3rem auto; box-shadow: 0 0 10px var(--cyan-glow);"></div>
+            <h2 class="animate-on-scroll" style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">Contact Me</h2>
+            <div class="animate-on-scroll delay-1" style="width: 50px; height: 3px; background: var(--cyan-glow); margin: 0 auto 3rem auto; box-shadow: 0 0 10px var(--cyan-glow);"></div>
             
             <div class="contact-container">
-                <div class="contact-left glass-card">
+                <div class="contact-left glass-card animate-on-scroll delay-1 hover-lift">
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Get In Touch</h3>
                     <p style="color: var(--text-muted); margin-bottom: 2rem;">If you want to work together or have any question, feel free to contact me.</p>
                     
@@ -287,7 +287,7 @@
                     </div>
                 </div>
 
-                <div class="contact-right glass-card">
+                <div class="contact-right glass-card animate-on-scroll delay-2 hover-lift">
                     <form action="#" method="POST" id="contactForm">
                         <input type="text" id="fullName" placeholder="Your Name" required class="contact-input">
                         <input type="email" id="email" placeholder="Your Email" required class="contact-input">
