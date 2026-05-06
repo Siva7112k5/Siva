@@ -962,6 +962,10 @@ nav a:hover::after {
         font-size: 2rem !important;
     }
 
+    h3 {
+        font-size: 1.3rem !important;
+    }
+
     .glass-card-large {
         padding: 2rem 1.5rem;
     }
@@ -978,6 +982,11 @@ nav a:hover::after {
     
     .about-top {
         flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
     }
 
     .hero-content {
@@ -1003,6 +1012,24 @@ nav a:hover::after {
         flex-direction: column;
     }
     
+    .stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+
+    .marquee-content i {
+        font-size: 2.5rem;
+    }
+
+    .about-top p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
     .footer-new {
         flex-direction: column;
         gap: 1.5rem;
