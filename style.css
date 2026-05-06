@@ -939,10 +939,14 @@ nav a:hover::after {
         letter-spacing: 2px;
     }
 
-    .name-text {
-        font-size: 2.8rem;
+    #intro-name.premium-glow {
+        font-size: 2.5rem;
         letter-spacing: 5px;
-        text-shadow: 0 0 15px var(--cyan-glow);
+        white-space: nowrap;
+    }
+
+    #intro-name.premium-glow::before {
+        letter-spacing: 5px;
     }
 
     .hero h1 {
@@ -1007,22 +1011,48 @@ nav a:hover::after {
         flex-direction: column;
     }
     
-    .stats {
-        flex-direction: column;
+    .stats-row {
         gap: 1rem;
+        justify-content: space-around;
+        margin: 2.5rem 0;
     }
 
-    .stat-card {
-        width: 100%;
+    .stat-number {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.2rem;
     }
 
-    .marquee-content i {
-        font-size: 2.5rem;
+    .stat-item p {
+        font-size: 0.7rem !important;
+        opacity: 0.8;
     }
 
-    .about-top p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+    .skills-container {
+        margin-top: 4rem;
+        padding: 0 0.5rem;
+    }
+
+    .skills-container h3 {
+        text-align: center;
+        margin-bottom: 2.5rem !important;
+        font-size: 1.5rem !important;
+    }
+
+    .skill-bar-item {
+        margin-bottom: 2rem;
+    }
+
+    .mobile-bottom-nav {
+        height: 65px;
+        background: rgba(3, 10, 15, 0.98);
+    }
+
+    .mobile-bottom-nav .nav-item i {
+        font-size: 1.3rem;
+    }
+
+    .mobile-bottom-nav .nav-item span {
+        font-size: 0.65rem;
     }
 
     .footer-new {
