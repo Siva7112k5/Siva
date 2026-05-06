@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sequence timing
     const textWaitTime = 2500;
-    const nameWaitTime = 5000; // Longer to accommodate dots + morph
+    const nameWaitTime = 3000;
     const expandTime = 1000;
 
     // Scroll Animation Observer Setup
@@ -40,14 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             introText.classList.add('hidden');
             
-            // 2. Show Dots Container
+            // 2. Show Name
             introName.classList.remove('hidden');
             
-            // 3. Reveal Name after dots have rotated a bit
-            setTimeout(() => {
-                nameText.classList.remove('hidden');
-            }, 100);
-
             setTimeout(() => {
                 // 4. Fade out everything in intro-name
                 introName.classList.add('fade-out');
@@ -173,58 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Custom Cursor
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
 
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // Cursor hover effects
-    const clickables = document.querySelectorAll('a, button, .project-card, .glass-card, .filter-btn');
-    clickables.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            cursorOutline.style.width = '70px';
-            cursorOutline.style.height = '70px';
-            cursorOutline.style.backgroundColor = 'rgba(0, 240, 255, 0.1)';
-        });
-        item.addEventListener('mouseleave', () => {
-            cursorOutline.style.width = '40px';
-            cursorOutline.style.height = '40px';
-            cursorOutline.style.backgroundColor = 'transparent';
-        });
-    });
-
-    // Particles.js Initialization
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00f0ff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.2, "random": false },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00f0ff", "opacity": 0.1, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-            },
-            "retina_detect": true
-        });
-    }
 
     // Animated Counters
     const counters = document.querySelectorAll('.stat-number');
