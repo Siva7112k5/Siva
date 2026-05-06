@@ -119,39 +119,58 @@ body {
     100% { width: 100px; opacity: 1; }
 }
 
-#intro-name.premium-glow {
+#intro-name {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots-wrapper {
+    display: flex;
+    gap: 15px;
+    animation: dotsRotate 2.5s ease-in-out forwards;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: var(--cyan-glow);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--cyan-glow);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.dot:nth-child(1) { animation: dotAppear 0.5s 0.2s forwards; }
+.dot:nth-child(2) { animation: dotAppear 0.5s 0.4s forwards; }
+.dot:nth-child(3) { animation: dotAppear 0.5s 0.6s forwards; }
+.dot:nth-child(4) { animation: dotAppear 0.5s 0.8s forwards; }
+
+@keyframes dotAppear {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes dotsRotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(360deg) scale(1.2); gap: 30px; }
+    80% { transform: rotate(720deg) scale(0.5); gap: 5px; opacity: 1; }
+    100% { transform: rotate(720deg) scale(0); opacity: 0; }
+}
+
+.name-text {
     font-size: 6rem;
     font-weight: 700;
-    letter-spacing: 10px;
+    letter-spacing: 15px;
     text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.2);
-    animation: nameEnter 2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    color: #fff;
+    text-shadow: 0 0 20px var(--cyan-glow), 0 0 40px var(--cyan-glow);
+    animation: nameRevealMorph 1.5s 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-#intro-name.premium-glow::before {
-    content: 'SIVA K';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0%;
-    height: 100%;
-    color: var(--cyan-glow);
-    -webkit-text-stroke: 0px transparent;
-    overflow: hidden;
-    animation: textFill 2.5s 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    filter: drop-shadow(0 0 20px var(--cyan-glow));
-}
-
-@keyframes nameEnter {
-    0% { opacity: 0; transform: scale(0.9); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes textFill {
-    0% { width: 0%; }
-    100% { width: 100%; }
+@keyframes nameRevealMorph {
+    0% { opacity: 0; transform: scale(1.5); filter: blur(20px); letter-spacing: 40px; }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); letter-spacing: 15px; }
 }
 
 #intro-circle {
@@ -941,13 +960,10 @@ nav a:hover::after {
         letter-spacing: 2px;
     }
 
-    #intro-name.premium-glow {
-        font-size: 3rem;
+    .name-text {
+        font-size: 2.8rem;
         letter-spacing: 5px;
-    }
-
-    #intro-name.premium-glow::before {
-        letter-spacing: 5px;
+        text-shadow: 0 0 15px var(--cyan-glow);
     }
 
     .hero h1 {

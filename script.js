@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const introOverlay = document.getElementById('intro-overlay');
     const introText = document.getElementById('intro-text');
     const introName = document.getElementById('intro-name');
+    const nameText = document.querySelector('.name-text');
     const introCircle = document.getElementById('intro-circle');
     const mainContent = document.getElementById('main-content');
 
     // Sequence timing
-    const textWaitTime = 3000;
-    const nameWaitTime = 3200;
+    const textWaitTime = 2500;
+    const nameWaitTime = 5000; // Longer to accommodate dots + morph
     const expandTime = 1000;
 
     // Scroll Animation Observer Setup
@@ -32,26 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // 1. Initial State: "Welcome To My Portfolio" is showing.
-    
+    // 1. Start: Welcome text
     setTimeout(() => {
-        // 2. Fade out "Welcome..."
         introText.classList.add('fade-out');
         
         setTimeout(() => {
             introText.classList.add('hidden');
             
-            // 3. Show "Elham" -> "Siva K"
+            // 2. Show Dots Container
             introName.classList.remove('hidden');
             
+            // 3. Reveal Name after dots have rotated a bit
             setTimeout(() => {
-                // 4. Fade out Name
+                nameText.classList.remove('hidden');
+            }, 100);
+
+            setTimeout(() => {
+                // 4. Fade out everything in intro-name
                 introName.classList.add('fade-out');
                 
                 setTimeout(() => {
                     introName.classList.add('hidden');
                     
-                    // 5. Show and expand circle
+                    // 5. Circle Expand
                     introCircle.classList.remove('hidden');
                     introCircle.classList.add('expand-circle');
                     
