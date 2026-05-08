@@ -202,7 +202,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 1.5rem 8%;
     max-width: 1400px;
     margin: 0 auto;
     position: fixed;
@@ -214,9 +214,9 @@ header {
 }
 
 header.scrolled {
-    background: rgba(3, 16, 24, 0.85);
-    backdrop-filter: blur(15px);
-    padding: 1rem 5%;
+    background: rgba(3, 16, 24, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 0.8rem 8%;
     border-bottom: 1px solid var(--glass-border);
 }
 
@@ -227,6 +227,9 @@ header.nav-hidden {
 .logo {
     font-size: 1.8rem;
     letter-spacing: 2px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -248,14 +251,14 @@ nav a:hover {
 
 /* Sections Common */
 section {
-    padding: 4rem 5%;
-    max-width: 1200px;
+    padding: 6rem 8% 4rem 8%;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 80vh;
-    gap: 4rem;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 6rem;
 }
 
 /* Hero Section */
@@ -439,9 +442,9 @@ section {
 
 .about-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 6rem;
     margin-bottom: 3rem;
 }
 
@@ -544,8 +547,8 @@ section {
 /* Sections Column Layout */
 .section-column {
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Glass Cards Common */
