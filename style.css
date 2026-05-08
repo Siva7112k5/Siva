@@ -205,6 +205,23 @@ header {
     padding: 2rem 5%;
     max-width: 1400px;
     margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease, padding 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(3, 16, 24, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 1rem 5%;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+header.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -803,6 +820,11 @@ section {
     padding: 0.8rem 0;
     justify-content: space-around;
     align-items: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-bottom-nav.nav-hidden {
+    transform: translateY(100%);
 }
 
 .mobile-bottom-nav .nav-item {

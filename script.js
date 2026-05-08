@@ -111,12 +111,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const header = document.querySelector('header');
+    const bottomNav = document.querySelector('.mobile-bottom-nav');
+    let lastScrollY = window.scrollY;
+    let scrollTimeout;
+
     const handleScroll = () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+
+        // Header scrolled background effect
+        if (currentScrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+
+        // Hide on scroll down, Show on scroll up
+        // Only trigger after a bit of scroll (e.g., 100px) to avoid sensitivity
+        if (Math.abs(currentScrollY - lastScrollY) > 5) {
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.classList.add('nav-hidden');
+                bottomNav.classList.add('nav-hidden');
+            } else {
+                header.classList.remove('nav-hidden');
+                bottomNav.classList.remove('nav-hidden');
+            }
+        }
+
+        lastScrollY = currentScrollY;
+
+        // Show when stop scrolling (YouTube-like behavior)
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            header.classList.remove('nav-hidden');
+            bottomNav.classList.remove('nav-hidden');
+        }, 1200); // Reappear after 1.2s of no scrolling
     };
     window.addEventListener('scroll', handleScroll);
 
