@@ -111,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const header = document.querySelector('header');
-    const bottomNav = document.querySelector('.mobile-bottom-nav');
+    const bottomNav = document.querySelector('.navigation');
+    const navItems = document.querySelectorAll('.list');
     let lastScrollY = window.scrollY;
     let scrollTimeout;
 
@@ -160,6 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
+                    }
+                });
+                // Also update mobile bottom nav
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.querySelector('a').getAttribute('href') === `#${id}`) {
+                        item.classList.add('active');
                     }
                 });
             }
@@ -241,5 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Handle mobile nav click active state
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 
 });
